@@ -1,0 +1,154 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="1000" d:DesignHeight="600"
+			 	Width="1000" Height="600"
+             x:Class="CursWorkAvalonia.Views.DataBaseView"
+			 Background="Orange">
+	<Grid ColumnDefinitions="*" RowDefinitions="20*,*">
+		<TabControl Grid.Column="0" Grid.Row="0">
+			<TabItem  Header="Dog" VerticalContentAlignment="Center">
+				<Grid RowDefinitions="20*,*">
+					<Grid Grid.Row="0">
+						<DataGrid Name="Dog_data"  CanUserReorderColumns="True" CanUserResizeColumns="True" CanUserSortColumns="True" BorderBrush="Black" Background="BlanchedAlmond" Items="{Binding $parent[Window].DataContext.Dogs}" AutoGenerateColumns="False">
+							<DataGrid.Columns>
+								<DataGridTextColumn Header="ID" Binding="{Binding Dogid}"/>
+								<DataGridTextColumn Header="Name" Binding="{Binding Name}"/>
+								<DataGridTextColumn Header="Gender" Binding="{Binding Gender}"/>
+								<DataGridTextColumn Header="Stats" Binding="{Binding Stats}"/>
+								<DataGridTemplateColumn Header="Delete">
+									<DataTemplate>
+										<Button CommandParameter="{Binding}" Command="{Binding $parent[Window].DataContext.DeleteDog}" Grid.Row="2" Name="Dog" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+											Удалить
+										</Button>
+									</DataTemplate>
+								</DataGridTemplateColumn>
+							</DataGrid.Columns>
+						</DataGrid>
+					</Grid>
+					<Button Grid.Row="1"  Command="{Binding $parent[Window].DataContext.CreatePlayer}"  VerticalContentAlignment="Center" HorizontalContentAlignment="Center"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+						Новая Запись
+					</Button>
+				</Grid>
+			</TabItem>
+			
+			
+			<TabItem  Header="Result" VerticalContentAlignment="Center">
+				<Grid RowDefinitions="20*,*">
+					<Grid Grid.Row="0">
+						<DataGrid Name="Result"  CanUserReorderColumns="True" CanUserResizeColumns="True" CanUserSortColumns="True" BorderBrush="Black" Background="BlanchedAlmond" Items="{Binding $parent[Window].DataContext.Results}" AutoGenerateColumns="False">
+							<DataGrid.Columns>
+								<DataGridTextColumn Header="ID" Binding="{Binding Resultsid}"/>
+								<DataGridTextColumn Header="Winner" Binding="{Binding Winner}"/>
+								<DataGridTextColumn Header="Reward" Binding="{Binding Reward}"/>
+								<DataGridTemplateColumn Header="Delete">
+									<DataTemplate>
+										<Button CommandParameter="{Binding}" Command="{Binding $parent[Window].DataContext.Result}" Grid.Row="2" Name="Player" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+											Удалить
+										</Button>
+									</DataTemplate>
+								</DataGridTemplateColumn>
+							</DataGrid.Columns>
+						</DataGrid>
+					</Grid>
+					<Button Grid.Row="1"  Command="{Binding $parent[Window].DataContext.CreateCountry}"  VerticalContentAlignment="Center" HorizontalContentAlignment="Center"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+						Новая Запись
+					</Button>
+				</Grid>
+			</TabItem>
+			
+			
+			<TabItem  Header="Stat" VerticalContentAlignment="Center">
+				<Grid RowDefinitions="20*,*">
+					<Grid Grid.Row="0">
+						<DataGrid Name="Stat"  CanUserReorderColumns="True" CanUserResizeColumns="True" CanUserSortColumns="True" BorderBrush="Black" Background="BlanchedAlmond" Items="{Binding $parent[Window].DataContext.Stats}" AutoGenerateColumns="False">
+							<DataGrid.Columns>
+								<DataGridTextColumn Header="ID" Binding="{Binding Statsid}"/>
+								<DataGridTextColumn Header="Wins" Binding="{Binding Wins}"/>
+								<DataGridTextColumn Header="Races" Binding="{Binding Races}"/>
+								<DataGridTextColumn Header="Windist" Binding="{Binding Windist}"/>
+								<DataGridTemplateColumn Header="Delete">
+									<DataTemplate>
+										<Button CommandParameter="{Binding}" Command="{Binding $parent[Window].DataContext.DeleteStat}" Grid.Row="2" Name="Player" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+											Удалить
+										</Button>
+									</DataTemplate>
+								</DataGridTemplateColumn>
+							</DataGrid.Columns>
+						</DataGrid>
+					</Grid>
+					<Button Grid.Row="1"  Command="{Binding $parent[Window].DataContext.CreateGender}"  VerticalContentAlignment="Center" HorizontalContentAlignment="Center"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+						Новая Запись
+					</Button>
+				</Grid>
+			</TabItem>
+
+			<TabItem  Header="Track" VerticalContentAlignment="Center">
+				<Grid RowDefinitions="20*,*">
+					<Grid Grid.Row="0">
+						<DataGrid Name="Track"  CanUserReorderColumns="True" CanUserResizeColumns="True" CanUserSortColumns="True" BorderBrush="Black" Background="BlanchedAlmond" Items="{Binding $parent[Window].DataContext.Tracks}" AutoGenerateColumns="False">
+							<DataGrid.Columns>
+								<DataGridTextColumn Header="ID" Binding="{Binding Trackid}"/>
+								<DataGridTextColumn Header="Dist" Binding="{Binding Dist}"/>
+								<DataGridTextColumn Header="City" Binding="{Binding City}"/>
+								<DataGridTemplateColumn Header="Delete">
+									<DataTemplate>
+										<Button CommandParameter="{Binding}" Command="{Binding $parent[Window].DataContext.DeleteTrack}" Grid.Row="2" Name="Player" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+											Удалить
+										</Button>
+									</DataTemplate>
+								</DataGridTemplateColumn>
+							</DataGrid.Columns>
+						</DataGrid>
+					</Grid>
+					<Button Grid.Row="1"  Command="{Binding $parent[Window].DataContext.CreateMatch}"  VerticalContentAlignment="Center" HorizontalContentAlignment="Center"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+						Новая Запись
+					</Button>
+				</Grid>
+			</TabItem>
+
+			<TabItem  Header="Matches" VerticalContentAlignment="Center">
+				<Grid RowDefinitions="20*,*">
+					<Grid Grid.Row="0">
+						<DataGrid Name="Match"  CanUserReorderColumns="True" CanUserResizeColumns="True" CanUserSortColumns="True" BorderBrush="Black" Background="BlanchedAlmond" Items="{Binding $parent[Window].DataContext.Matches}" AutoGenerateColumns="False">
+							<DataGrid.Columns>
+								<DataGridTextColumn Header="ID" Binding="{Binding Matchesid}"/>
+								<DataGridTextColumn Header="Results" Binding="{Binding Results}"/>
+								<DataGridTextColumn Header="Year" Binding="{Binding Year}"/>
+								<DataGridTextColumn Header="Grand" Binding="{Binding Grand}"/>
+								<DataGridTemplateColumn Header="Delete">
+									<DataTemplate>
+										<Button CommandParameter="{Binding}" Command="{Binding $parent[Window].DataContext.DeleteMatch}" Grid.Row="2" Name="Player" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+											Удалить
+										</Button>
+									</DataTemplate>
+								</DataGridTemplateColumn>
+							</DataGrid.Columns>
+						</DataGrid>
+					</Grid>
+					<Button Grid.Row="1"  Command="{Binding $parent[Window].DataContext.CreateMatch}"  VerticalContentAlignment="Center" HorizontalContentAlignment="Center"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+						Новая Запись
+					</Button>
+				</Grid>
+			</TabItem>
+	
+		</TabControl>
+		<TabControl  Grid.Column="1" Grid.Row="0" Items="{Binding $parent[Window].DataContext.Items}">
+			<TabControl.ItemTemplate>
+				<DataTemplate>
+					<TextBlock Text="{Binding Name}" />
+				</DataTemplate>
+			</TabControl.ItemTemplate>
+			<TabControl.ContentTemplate>
+				<DataTemplate>
+					<DockPanel LastChildFill="True">
+					</DockPanel>
+				</DataTemplate>
+			</TabControl.ContentTemplate>
+		</TabControl>
+		<Button Command="{Binding $parent[Window].DataContext.SQLRequestOpen}" Grid.Column="0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Grid.ColumnSpan="2" Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+			Создать Запрос
+		</Button>
+	</Grid>
+</UserControl>
