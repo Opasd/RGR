@@ -27,7 +27,7 @@
 							</DataGrid.Columns>
 						</DataGrid>
 					</Grid>
-					<Button Grid.Row="1"  Command="{Binding $parent[Window].DataContext.CreatePlayer}"  VerticalContentAlignment="Center" HorizontalContentAlignment="Center"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+					<Button Grid.Row="1"  Command="{Binding $parent[Window].DataContext.CreateDog}"  VerticalContentAlignment="Center" HorizontalContentAlignment="Center"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
 						Новая Запись
 					</Button>
 				</Grid>
@@ -44,7 +44,7 @@
 								<DataGridTextColumn Header="Reward" Binding="{Binding Reward}"/>
 								<DataGridTemplateColumn Header="Delete">
 									<DataTemplate>
-										<Button CommandParameter="{Binding}" Command="{Binding $parent[Window].DataContext.Result}" Grid.Row="2" Name="Player" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+										<Button CommandParameter="{Binding}" Command="{Binding $parent[Window].DataContext.DeleteResult}" Grid.Row="2" Name="Dog" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
 											Удалить
 										</Button>
 									</DataTemplate>
@@ -52,7 +52,7 @@
 							</DataGrid.Columns>
 						</DataGrid>
 					</Grid>
-					<Button Grid.Row="1"  Command="{Binding $parent[Window].DataContext.CreateCountry}"  VerticalContentAlignment="Center" HorizontalContentAlignment="Center"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+					<Button Grid.Row="1"  Command="{Binding $parent[Window].DataContext.CreateResult}"  VerticalContentAlignment="Center" HorizontalContentAlignment="Center"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
 						Новая Запись
 					</Button>
 				</Grid>
@@ -70,7 +70,7 @@
 								<DataGridTextColumn Header="Windist" Binding="{Binding Windist}"/>
 								<DataGridTemplateColumn Header="Delete">
 									<DataTemplate>
-										<Button CommandParameter="{Binding}" Command="{Binding $parent[Window].DataContext.DeleteStat}" Grid.Row="2" Name="Player" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+										<Button CommandParameter="{Binding}" Command="{Binding $parent[Window].DataContext.DeleteStat}" Grid.Row="2" Name="Dog" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
 											Удалить
 										</Button>
 									</DataTemplate>
@@ -94,7 +94,7 @@
 								<DataGridTextColumn Header="City" Binding="{Binding City}"/>
 								<DataGridTemplateColumn Header="Delete">
 									<DataTemplate>
-										<Button CommandParameter="{Binding}" Command="{Binding $parent[Window].DataContext.DeleteTrack}" Grid.Row="2" Name="Player" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+										<Button CommandParameter="{Binding}" Command="{Binding $parent[Window].DataContext.DeleteTrack}" Grid.Row="2" Name="Dog" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
 											Удалить
 										</Button>
 									</DataTemplate>
@@ -119,7 +119,7 @@
 								<DataGridTextColumn Header="Grand" Binding="{Binding Grand}"/>
 								<DataGridTemplateColumn Header="Delete">
 									<DataTemplate>
-										<Button CommandParameter="{Binding}" Command="{Binding $parent[Window].DataContext.DeleteMatch}" Grid.Row="2" Name="Player" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+										<Button CommandParameter="{Binding}" Command="{Binding $parent[Window].DataContext.DeleteMatch}" Grid.Row="2" Name="Dog" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
 											Удалить
 										</Button>
 									</DataTemplate>
